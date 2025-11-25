@@ -1,0 +1,154 @@
+---
+// src/components/Navbar.astro
+
+// 1. Definimos los enlaces en una lista (Array) para no repetir código
+const navLinks = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Nosotros', href: '/sobre-nosotros' },
+  { name: 'Servicios', href: '/servicios' },
+  { name: 'Proyectos', href: '/proyectos' },
+  { name: 'Contacto', href: '/contacto' },
+];
+
+// 2. Obtenemos la URL actual de la página donde está el usuario
+const currentPath = Astro.url.pathname;
+
+// Función auxiliar para saber si el link está activo
+// (Se considera activo si la URL es exactamente igual, o si elimina la barra final extra)
+const isActive = (href: string) => {
+    if (href === '/') return currentPath === '/';
+    return currentPath.startsWith(href);
+};
+---
+
+<nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-inconed-black/90 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 relative z-50 bg-inconed-black/90 md:bg-transparent"> 
+      
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center gap-2 group">
+          <img class="h-12 w-auto transition-transform group-hover:scale-110" src="/assets/logoempresa1.png" alt="INCONED Logo">
+          <span class="font-oswald text-2xl font-bold text-white tracking-wide">
+            INCONED <span class="text-inconed-gold">S.A.S.</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          
+          {navLinks.map((link) => (
+            <a 
+              href={link.href}
+              class:list={[
+                "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                // 👇 AQUÍ OCURRE LA MAGIA: Si es activo = Dorado y Negrita. Si no = Blanco.
+                isActive(link.href) 
+                  ? "text-inconed-gold font-bold border-b-2 border-inconed-gold" 
+                  : "text-white hover:text-inconed-gold"
+              ]}
+            >
+              {link.name}
+            </a>
+          ))}
+          
+          <a href="https://wa.me/593982452634" target="_blank" class="bg-inconed-gold text-black px-5 py-2 rounded-full font-bold hover:bg-white hover:scale-105 transition-all shadow-lg shadow-yellow-500/20 ml-4">
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="-mr-2 flex md:hidden">
+        <button id="mobile-menu-btn" type="button" class="group inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none transition-transform active:scale-95">
+          <span class="sr-only">Abrir menú</span>
+          <div class="w-6 h-6 flex flex-col justify-center items-center gap-1.5 relative">
+             <span id="line-1" class="w-full h-0.5 bg-current transition-all duration-300"></span>
+             <span id="line-2" class="w-full h-0.5 bg-current transition-all duration-300"></span>
+             <span id="line-3" class="w-full h-0.5 bg-current transition-all duration-300"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-500 ease-in-out opacity-0 -translate-y-5 pointer-events-none -z-10">
+    <div class="px-4 py-8 space-y-4 flex flex-col items-center">
+      
+      {navLinks.map((link) => (
+        <a 
+          href={link.href} 
+          class:list={[
+            "text-2xl font-oswald font-bold tracking-wide transition-colors py-2",
+            // Lógica también para móvil
+            isActive(link.href)
+              ? "text-inconed-gold border-b-2 border-inconed-gold"
+              : "text-white hover:text-inconed-gold"
+          ]}
+        >
+          {link.name}
+        </a>
+      ))}
+      
+      <div class="pt-6 w-full max-w-xs">
+        <a href="https://wa.me/593982452634" target="_blank" class="block w-full text-center bg-inconed-gold text-black px-6 py-3 rounded-full font-bold hover:bg-white transition-all shadow-lg shadow-yellow-500/10">
+          WhatsApp Directo 📲
+        </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    
+    const line1 = document.getElementById('line-1');
+    const line2 = document.getElementById('line-2');
+    const line3 = document.getElementById('line-3');
+
+    let isOpen = false;
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        menu?.classList.remove('opacity-0', '-translate-y-5', 'pointer-events-none');
+        menu?.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        
+        line1?.classList.add('rotate-45', 'translate-y-2');
+        line2?.classList.add('opacity-0');
+        line3?.classList.add('-rotate-45', '-translate-y-2');
+        
+      } else {
+        menu?.classList.add('opacity-0', '-translate-y-5', 'pointer-events-none');
+        menu?.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        
+        line1?.classList.remove('rotate-45', 'translate-y-2');
+        line2?.classList.remove('opacity-0');
+        line3?.classList.remove('-rotate-45', '-translate-y-2');
+      }
+    }
+
+    if (btn && menu) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (isOpen && !menu.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+          toggleMenu();
+        }
+      });
+    }
+  });
+</script>

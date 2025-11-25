@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// 1. AQUÍ DEFINIMOS LOS DATOS DE CADA PROYECTO
+export async function getStaticPaths() {
+  return [
+    {
+      params: { id: 'la-salle' },
+      props: {
+        title: "Complejo Lúdico La Salle",
+        category: "Institucional / Educativo",
+        location: "Guayaquil, Ecuador",
+        year: "2025",
+        area: "326 m²",
+        description: "Un proyecto desafiante ubicado en la cima de un cerro. Diseñamos un espacio recreativo que se integra con la topografía natural, priorizando la seguridad de los estudiantes y creando zonas de juego que fomentan el desarrollo cognitivo y físico.",
+        // TUS FOTOS SOLICITADAS:
+        cover: "/assets/proyecto1.jpg",
+        gallery: [
+          "/assets/proyecto1.jpg",
+          "/assets/proyecto2.jpg",
+          "/assets/proyecto3.jpg",
+          "/assets/proyecto4.jpg",
+          "/assets/proyecto5.jpg",
+          "/assets/proyecto6.jpg"
+        ]
+      },
+    },
+    {
+      params: { id: 'casa-playa' },
+      props: {
+        title: "Residencia Playa & Relax",
+        category: "Residencial / Vacacional",
+        location: "Santa Elena, Ecuador",
+        year: "2025",
+        area: "350 m²",
+        description: "Arquitectura moderna frente al mar. Este proyecto residencial combina el lujo con la resistencia a los elementos costeros. Espacios abiertos, ventilación cruzada y una piscina infinita que se funde con el horizonte.",
+        // TUS FOTOS SOLICITADAS:
+        cover: "/assets/casa-playa-render1.jpg", // Usamos el render principal de portada
+        gallery: [
+          "/assets/casa-playa-obra1.jpg",
+          "/assets/casa-playa-obra2.jpg",
+          "/assets/casa-playa-render2.jpg",
+          // Repito alguna si quieres llenar la grilla o déjalo así
+          "/assets/casa-playa-render1.jpg" 
+        ]
+      },
+    },
+  ];
+}
+
+const { title, category, location, year, area, description, cover, gallery } = Astro.props;
+---
+
+<Layout title={title}>
+
+  <div class="relative h-[70vh] w-full bg-black">
+    <img 
+      src={cover} 
+      alt={title} 
+      class="w-full h-full object-cover opacity-60 fixed-effect"
+      transition:name={`image-${title}`} 
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+    
+    <div class="absolute bottom-0 left-0 w-full p-8 md:p-16">
+        <div class="container mx-auto max-w-7xl">
+            <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm mb-2 block animate-fade-up">
+                {category}
+            </span>
+            <h1 class="font-oswald text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-up-delay">
+                {title.toUpperCase()}
+            </h1>
+        </div>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+           <div class="lg:col-span-4 bg-gray-50 p-8 rounded-xl border border-gray-100 h-fit lg:sticky lg:top-24 relative">
+                <h3 class="font-oswald text-2xl text-inconed-dark mb-6 border-b border-inconed-gold pb-2 inline-block">FICHA TÉCNICA</h3>
+                <ul class="space-y-6 font-sans">
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase tracking-wider font-bold">Ubicación</span>
+                        <span class="text-inconed-dark font-medium text-lg">{location}</span>
+                    </li>
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase tracking-wider font-bold">Año</span>
+                        <span class="text-inconed-dark font-medium text-lg">{year}</span>
+                    </li>
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase tracking-wider font-bold">Área Construida</span>
+                        <span class="text-inconed-dark font-medium text-lg">{area}</span>
+                    </li>
+                    <li>
+                        <span class="block text-gray-400 text-xs uppercase tracking-wider font-bold">Servicios</span>
+                        <span class="text-inconed-dark font-medium text-lg">Diseño & Construcción</span>
+                    </li>
+                </ul>
+                
+                <a href="https://wa.me/593982452634" target="_blank" class="mt-8 block w-full bg-inconed-dark text-white text-center py-3 rounded-lg font-bold hover:bg-inconed-gold hover:text-black transition-colors">
+                    Cotizar Similar
+                </a>
+            </div>
+
+            <div class="lg:col-span-8">
+                <h3 class="font-oswald text-3xl text-inconed-dark mb-6">SOBRE EL PROYECTO</h3>
+                <p class="text-gray-600 text-lg leading-relaxed font-sans text-justify mb-12">
+                    {description}
+                </p>
+
+                <h3 class="font-oswald text-3xl text-inconed-dark mb-8">GALERÍA VISUAL</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {gallery.map((img, index) => (
+                        <div class={`rounded-xl overflow-hidden shadow-lg group cursor-zoom-in ${index === 0 ? 'md:col-span-2 h-[400px]' : 'h-[300px]'}`}>
+                            <img 
+                                src={img} 
+                                alt={`Vista ${index + 1} - ${title}`} 
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+  <section class="bg-inconed-dark py-12 border-t border-white/10">
+      <div class="container mx-auto px-4 text-center">
+          <a href="/proyectos" class="text-white hover:text-inconed-gold font-bold uppercase tracking-widest transition-colors inline-flex items-center gap-2">
+              ← Volver a todos los proyectos
+          </a>
+      </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,64 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+    description?: string; // Opcional: Para poder cambiar la descripción por página si quieres
+    image?: string;       // Opcional: Para cambiar la foto de portada al compartir
+}
+
+// Valores por defecto (Si una página no tiene descripción específica, usa esta)
+const { 
+    title, 
+    description = "INCONED S.A.S. - Líderes en construcción, diseño arquitectónico y remodelaciones en Ecuador. Transformamos espacios con innovación y precisión técnica.",
+    image = "/assets/proyecto1.jpg" // Esta será la foto que salga en WhatsApp
+} = Astro.props;
+
+// Aquí pondrás tu dominio real cuando compres el .com (Ej: https://inconed.com)
+const siteUrl = "https://inconed.com"; 
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		
+        <link rel="icon" type="image/png" href="/favicon.png" />
+		
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+		
+        <title>{title} | INCONED S.A.S.</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content="constructora ecuador, arquitectos guayaquil, diseño de interiores, planos, permisos municipales, remodelacion, inconed" />
+        <meta name="author" content="INCONED S.A.S." />
+        <meta name="robots" content="index, follow" /> <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={`${title} | INCONED S.A.S.`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} /> <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={`${title} | INCONED S.A.S.`} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
+
+        <ViewTransitions />
+	</head>
+	<body class="bg-white flex flex-col min-h-screen">
+		
+		<Navbar />
+		
+		<main class="flex-grow" transition:animate="slide">
+			<slot />
+		</main>
+
+        <WhatsAppFloat />
+
+		<Footer />
+		
+	</body>
+</html>

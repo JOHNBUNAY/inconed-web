@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Proyectos">
+
+  <section class="relative min-h-[50vh] flex items-center justify-center bg-black overflow-hidden pt-32 pb-16">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1541976594312-cd72c7b39905?q=80&w=2070&auto=format&fit=crop" 
+        alt="Proyectos en construcción" 
+        class="w-full h-full object-cover opacity-50"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-inconed-black via-black/40 to-transparent" />
+    </div>
+    
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <span class="text-inconed-gold font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base mb-4 block animate-fade-up">
+        Nuestro Legado
+      </span>
+      <h1 class="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-up-delay">
+        OBRAS QUE <br/> <span class="text-inconed-gold">TRASCIENDEN</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="bg-white py-24">
+    <div class="container mx-auto px-4 max-w-7xl space-y-32">
+
+      <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group">
+        
+        <div class="lg:col-span-7 relative">
+           <a href="/detalle/la-salle" class="block overflow-hidden rounded-xl shadow-2xl relative h-[400px] md:h-[500px]">
+             <div class="absolute inset-0 bg-inconed-dark/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+             <img 
+               src="/assets/proyecto1.jpg" 
+               alt="Complejo Lúdico La Salle" 
+               class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+               transition:name="image-Complejo Lúdico La Salle"
+             />
+             <div class="absolute top-6 left-6 z-20 bg-inconed-gold text-black font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider">
+                En Ejecución
+             </div>
+             <div class="absolute bottom-6 right-6 z-20 bg-white text-black font-bold px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 shadow-lg">
+                Ver Galería Completa →
+             </div>
+           </a>
+        </div>
+
+        <div class="lg:col-span-5">
+           <span class="text-gray-400 font-bold tracking-widest text-sm uppercase mb-2 block">Institucional / Educativo</span>
+           <a href="/detalle/la-salle" class="hover:text-inconed-gold transition-colors">
+               <h2 class="font-oswald text-4xl md:text-5xl font-bold text-inconed-dark mb-6">
+                 COMPLEJO LÚDICO <span class="text-inconed-gold">LA SALLE</span>
+               </h2>
+           </a>
+           <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+             Un espacio diseñado para el desarrollo integral. Este proyecto combina áreas recreativas seguras con una arquitectura que respeta el entorno educativo.
+           </p>
+           <a href="/detalle/la-salle" class="text-inconed-gold font-bold uppercase tracking-widest text-sm border-b-2 border-inconed-gold pb-1 hover:text-inconed-dark hover:border-inconed-dark transition-all">
+               Ver Fotos del Proyecto
+           </a>
+        </div>
+      </article>
+
+      <hr class="border-gray-200" />
+
+      <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group">
+        
+        <div class="lg:col-span-5 order-2 lg:order-1">
+           <span class="text-gray-400 font-bold tracking-widest text-sm uppercase mb-2 block">Residencial / Vacacional</span>
+           <a href="/detalle/casa-playa" class="hover:text-inconed-gold transition-colors">
+               <h2 class="font-oswald text-4xl md:text-5xl font-bold text-inconed-dark mb-6">
+                 RESIDENCIA <span class="text-inconed-gold">PLAYA & RELAX</span>
+               </h2>
+           </a>
+           <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+             Arquitectura moderna frente al mar. Priorizamos la iluminación natural y el uso de materiales resistentes al ambiente salino.
+           </p>
+           <a href="/detalle/casa-playa" class="text-inconed-gold font-bold uppercase tracking-widest text-sm border-b-2 border-inconed-gold pb-1 hover:text-inconed-dark hover:border-inconed-dark transition-all">
+               Ver Fotos del Proyecto
+           </a>
+        </div>
+
+        <div class="lg:col-span-7 relative order-1 lg:order-2">
+           <a href="/detalle/casa-playa" class="block overflow-hidden rounded-xl shadow-2xl relative h-[400px] md:h-[500px]">
+             <div class="absolute inset-0 bg-inconed-dark/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+             <img 
+               src="/assets/casa-playa-render1.jpg" 
+               alt="Casa en la playa" 
+               class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+               transition:name="image-Residencia Playa & Relax"
+             />
+             <div class="absolute top-6 right-6 z-20 bg-white text-black font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider">
+                En Ejecución
+             </div>
+             <div class="absolute bottom-6 left-6 z-20 bg-inconed-gold text-black font-bold px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 shadow-lg">
+                Ver Galería Completa →
+             </div>
+           </a>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+  <section class="py-20 bg-gray-50 text-center border-t border-gray-200">
+     <div class="container mx-auto px-4">
+        <h3 class="font-oswald text-2xl text-gray-400 mb-4">PRÓXIMOS LANZAMIENTOS</h3>
+        <div class="flex flex-wrap justify-center gap-8 opacity-60">
+           <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-inconed-gold rounded-full"></span>
+              <span class="font-sans font-bold text-gray-600">Edificio Corporativo Quito</span>
+           </div>
+           <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-inconed-gold rounded-full"></span>
+              <span class="font-sans font-bold text-gray-600">Residencia Los Ceibos</span>
+           </div>
+           <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-inconed-gold rounded-full"></span>
+              <span class="font-sans font-bold text-gray-600">Remodelación Comercial Urdesa</span>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <section class="py-20 bg-inconed-gold text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="font-oswald text-4xl md:text-5xl font-bold text-black mb-6">
+        ¿TIENES UN PROYECTO EN MENTE?
+      </h2>
+      <a href="https://wa.me/593982452634" target="_blank" class="inline-block bg-black text-white font-bold py-4 px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-2xl hover:scale-105">
+        Hagámoslo Realidad
+      </a>
+    </div>
+  </section>
+
+</Layout>

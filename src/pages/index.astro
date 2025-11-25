@@ -1,16 +1,152 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.tsx';
+import ProjectCard from '../components/ProjectCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio">
+  
+  <Hero client:load />
+
+  <section class="py-24 bg-inconed-dark text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 max-w-7xl relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <div>
+              <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm">Sobre Nosotros</span>
+              <h2 class="font-oswald text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
+                  INNOVACIÓN Y <br/> <span class="text-inconed-gold">SOLIDEZ TÉCNICA</span>
+              </h2>
+              <p class="text-gray-400 text-lg mb-6 font-sans leading-relaxed text-justify">
+                  <strong>INCONED S.A.S.</strong> (Innovación en Construcción y Diseño) es una empresa ecuatoriana fundada en 2025. No solo construimos edificios; creamos soluciones integrales que combinan la funcionalidad arquitectónica con la precisión de la ingeniería.
+              </p>
+              <p class="text-gray-400 text-lg mb-8 font-sans leading-relaxed text-justify">
+                  Desde la planificación hasta la entrega de llaves, nuestro compromiso es la transparencia y la excelencia en cada metro cuadrado.
+              </p>
+
+              <div class="grid grid-cols-2 gap-8 mb-10 border-t border-white/10 pt-8">
+                  <div>
+                      <span class="block text-4xl font-oswald font-bold text-white">+1,200 m²</span>
+                      <span class="text-sm text-inconed-gold uppercase tracking-wider">Proyectados</span>
+                  </div>
+                  <div>
+                      <span class="block text-4xl font-oswald font-bold text-white">100%</span>
+                      <span class="text-sm text-inconed-gold uppercase tracking-wider">Cumplimiento</span>
+                  </div>
+              </div>
+
+              <a href="/sobre-nosotros" class="inline-flex items-center gap-2 bg-transparent border border-inconed-gold text-inconed-gold hover:bg-inconed-gold hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300">
+                  Conoce nuestra historia
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+          </div>
+
+          <div class="relative flex justify-center items-center h-[450px]">
+              <div class="absolute inset-0 border-2 border-inconed-gold/30 rounded-xl transform rotate-3"></div>
+              
+              <div class="relative z-10 w-full h-full bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex items-center justify-center p-12 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                      src="/assets/logoempresa1.png" 
+                      alt="Logo INCONED" 
+                      class="w-full h-auto max-h-64 object-contain drop-shadow-2xl"
+                  />
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white relative z-20">
+    <div class="container mx-auto px-4 max-w-7xl">
+      
+      <div class="text-center mb-16">
+        <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm">Lo que hacemos</span>
+        <h2 class="font-oswald text-4xl md:text-5xl font-bold text-inconed-dark mt-2">
+          SOLUCIONES <span class="text-inconed-gold">INTEGRALES</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="Diseño Arquitectónico"
+          description="Planos, anteproyectos y diseño conceptual. Materializamos tu idea con estética y funcionalidad."
+          image="https://www.emagister.com/i/wp-content/uploads/2023/08/GettyImages-1398135990.jpg"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>'
+        />
+        <ServiceCard 
+          title="Construcción Civil"
+          description="Ejecución de obra gris y acabados. Garantizamos cumplimiento de cronogramas y control de presupuesto."
+          image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" /></svg>'
+        />
+        <ServiceCard 
+          title="Remodelación"
+          description="Renovamos espacios residenciales y comerciales. Moderniza tu propiedad y aumenta su plusvalía."
+          image="https://www.kin.energy/PAgina%20KINENERGY%20IMAGENES/Imagenes%20Blog/Art%C3%ADculos%202022/Dise%C3%B1o-de-ingenier%C3%ADas-el%C3%A9ctrico-hidrosanitarias-PCI-HVAC.png"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" /></svg>'
+        />
+        <ServiceCard 
+          title="Gestión Municipal"
+          description="Legalizaciones, permisos de construcción y propiedad horizontal. Nos encargamos de la burocracia."
+          image="https://img.freepik.com/premium-photo/young-business-man-suit-is-managing-paperwork-office-many-paperwork-that-is-finished-documents-company-about-finance-information-company_208349-1013.jpg"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>'
+        />
+        <ServiceCard 
+          title="Diseño de Interiores"
+          description="Mobiliario, iluminación y texturas. Creamos atmósferas que conectan con tu estilo de vida."
+          image="https://ceutec.hn/wp-content/uploads/2024/07/tendencias-en-decoracion-2024.webp"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>'
+        />
+        <ServiceCard 
+          title="Visualización 3D"
+          description="Renders fotorrealistas y recorridos virtuales para pre-visualizar tu inversión antes de construir."
+          image="https://d5render-web-assets.d5cdn.com/archive/resource/%E9%9D%99%E6%80%81%E5%9B%BE.jpg"
+          icon='<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>'
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gray-50" id="proyectos">
+    <div class="container mx-auto px-4 max-w-7xl">
+      
+      <div class="text-center mb-16">
+        <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm">Nuestro Portafolio</span>
+        <h2 class="font-oswald text-4xl md:text-5xl font-bold text-inconed-dark mt-2">
+          PROYECTOS <span class="text-inconed-gold">DESTACADOS</span>
+        </h2>
+        <div class="w-24 h-1 bg-inconed-gold mx-auto mt-6 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <ProjectCard 
+          title="Complejo Lúdico La Salle" 
+          location="Guayaquil, Ecuador"
+          image="/assets/proyecto1.jpg" 
+          status="En Ejecución"
+        />
+
+        <ProjectCard 
+          title="Casa en la Playa" 
+          location="Santa Elena"
+          image="/assets/casa-playa-render1.jpg"
+          status="En Ejecución" 
+        />
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/proyectos" class="inline-block border-2 border-inconed-dark text-inconed-dark font-bold py-3 px-8 rounded-full hover:bg-inconed-dark hover:text-white transition-colors duration-300">
+          Ver Todos los Proyectos
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

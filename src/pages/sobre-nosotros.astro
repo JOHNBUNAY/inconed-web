@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Nosotros">
+
+ <section class="relative min-h-[60vh] w-full flex items-center justify-center bg-black overflow-hidden pt-32 pb-16">
+    
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" 
+        alt="Oficina de arquitectura" 
+        class="w-full h-full object-cover opacity-50"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-inconed-black via-black/40 to-transparent" />
+    </div>
+    
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <span class="text-inconed-gold font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base mb-4 md:mb-6 block animate-fade-up">
+        Nuestra Esencia
+      </span>
+      
+      <h1 class="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-up-delay">
+        INNOVACIÓN Y <br/> <span class="text-inconed-gold">PRECISIÓN</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <h2 class="font-oswald text-4xl font-bold text-inconed-dark mb-6">
+            CONSTRUYENDO EL <span class="text-inconed-gold">ECUADOR DEL MAÑANA</span>
+          </h2>
+          <p class="text-gray-600 text-lg mb-6 font-sans leading-relaxed text-justify">
+            <strong>INCONED S.A.S.</strong> nace en 2025 con una visión clara: romper con la construcción tradicional. Somos una empresa ecuatoriana que fusiona la creatividad del diseño arquitectónico con la rigurosidad de la ingeniería civil.
+          </p>
+          <p class="text-gray-600 text-lg mb-6 font-sans leading-relaxed text-justify">
+            Desde nuestros inicios, marcamos la diferencia con el proyecto <strong>Complejo Lúdico La Salle</strong> en Guayaquil, una obra que definió nuestro estándar de calidad. Hoy, seguimos creciendo con proyectos residenciales y comerciales que priorizan la funcionalidad y la estética.
+          </p>
+          
+          <div class="border-l-4 border-inconed-gold pl-6 mt-8">
+            <p class="text-xl italic text-inconed-dark font-serif">
+              "No solo levantamos muros, creamos espacios donde la vida sucede."
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img 
+            src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070&auto=format&fit=crop" 
+            alt="Arquitectos trabajando" 
+            class="w-full h-[500px] object-cover rounded-xl shadow-2xl relative z-10"
+          />
+          <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-4 border-inconed-gold rounded-xl z-0"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-black text-white border-y border-white/10">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="font-oswald text-3xl text-inconed-gold">CIFRAS QUE NOS RESPALDAN</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+            <div class="p-4 hover:-translate-y-1 transition-transform duration-300">
+                <span class="block text-5xl font-oswald font-bold text-white mb-2">2</span>
+                <span class="text-sm text-gray-400 uppercase tracking-wider">Obras en<br>ejecución</span>
+            </div>
+            <div class="p-4 hover:-translate-y-1 transition-transform duration-300">
+                <span class="block text-5xl font-oswald font-bold text-white mb-2">+1.200</span>
+                <span class="text-sm text-gray-400 uppercase tracking-wider">m² en<br>Desarrollo</span>
+            </div>
+            <div class="p-4 hover:-translate-y-1 transition-transform duration-300">
+                <span class="block text-5xl font-oswald font-bold text-white mb-2">+8</span>
+                <span class="text-sm text-gray-400 uppercase tracking-wider">Profesionales<br>activos</span>
+            </div>
+            <div class="p-4 hover:-translate-y-1 transition-transform duration-300">
+                <span class="block text-5xl font-oswald font-bold text-white mb-2">3</span>
+                <span class="text-sm text-gray-400 uppercase tracking-wider">Alianzas<br>estratégicas</span>
+            </div>
+            <div class="p-4 hover:-translate-y-1 transition-transform duration-300 md:col-span-3 lg:col-span-1">
+                <span class="block text-5xl font-oswald font-bold text-inconed-gold mb-2">100%</span>
+                <span class="text-sm text-gray-400 uppercase tracking-wider">Cumplimiento<br>técnico</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-inconed-dark text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+
+    <div class="container mx-auto px-4 max-w-7xl relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <div class="bg-white/5 p-10 rounded-2xl border border-white/10 hover:border-inconed-gold transition-colors duration-300">
+          <div class="text-inconed-gold text-4xl mb-4">🎯</div>
+          <h3 class="font-oswald text-3xl font-bold mb-4">Nuestra Misión</h3>
+          <p class="text-gray-300 leading-relaxed text-lg">
+            Ofrecer soluciones integrales en diseño y construcción, combinando funcionalidad, estética e ingeniería avanzada. Nos comprometemos a cumplir los más altos estándares de calidad, respetando tiempos y presupuestos para garantizar la satisfacción total de nuestros clientes.
+          </p>
+        </div>
+
+        <div class="bg-white/5 p-10 rounded-2xl border border-white/10 hover:border-inconed-gold transition-colors duration-300">
+          <div class="text-inconed-gold text-4xl mb-4">🔭</div>
+          <h3 class="font-oswald text-3xl font-bold mb-4">Nuestra Visión</h3>
+          <p class="text-gray-300 leading-relaxed text-lg">
+            Ser líderes en innovación arquitectónica y construcción sostenible en Ecuador para el año 2030. Aspiramos a ser reconocidos no solo por la magnitud de nuestras obras, sino por nuestra excelencia técnica, ética profesional y compromiso con el desarrollo urbano.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="text-center mb-16">
+        <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm">ADN Corporativo</span>
+        <h2 class="font-oswald text-4xl font-bold text-inconed-dark mt-2">
+          VALORES QUE NOS <span class="text-inconed-gold">DEFINEN</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-inconed-gold/10 text-inconed-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            🛡️
+          </div>
+          <h4 class="font-oswald text-xl font-bold mb-2">Seguridad</h4>
+          <p class="text-gray-600 text-sm">Priorizamos la integridad de nuestro equipo y la solidez estructural de cada obra.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-inconed-gold/10 text-inconed-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            💡
+          </div>
+          <h4 class="font-oswald text-xl font-bold mb-2">Innovación</h4>
+          <p class="text-gray-600 text-sm">Usamos tecnología de punta y diseños modernos para optimizar recursos y estética.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-inconed-gold/10 text-inconed-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            🤝
+          </div>
+          <h4 class="font-oswald text-xl font-bold mb-2">Transparencia</h4>
+          <p class="text-gray-600 text-sm">Cuentas claras y comunicación constante. Sin sorpresas ni costos ocultos.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-inconed-gold/10 text-inconed-gold rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            ⚡
+          </div>
+          <h4 class="font-oswald text-xl font-bold mb-2">Puntualidad</h4>
+          <p class="text-gray-600 text-sm">Respetamos tu tiempo. Entregamos los proyectos en los plazos acordados.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-inconed-gold">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="font-oswald text-4xl md:text-5xl font-bold text-black mb-6">
+        ¿LISTO PARA CONSTRUIR TU PROYECTO?
+      </h2>
+      <p class="text-black/80 text-xl max-w-2xl mx-auto mb-10 font-medium">
+        Hablemos sobre tus ideas. En INCONED estamos listos para asesorarte sin compromiso.
+      </p>
+      <a href="https://wa.me/593982452634" target="_blank" class="inline-block bg-black text-white font-bold py-4 px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-2xl hover:scale-105">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+</Layout>

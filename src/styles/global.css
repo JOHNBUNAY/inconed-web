@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .bg-inconed-dark {
+        background-color: #111111;
+    }
+    .text-inconed-gold {
+        color: #F2A900;
+    }
+    /* Evita que cualquier elemento se salga del ancho de la pantalla en móviles */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+}
