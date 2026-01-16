@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-// 1. AQUÍ DEFINIMOS LOS DATOS DE CADA PROYECTO
 export async function getStaticPaths() {
   return [
     {
@@ -13,15 +12,17 @@ export async function getStaticPaths() {
         year: "2025",
         area: "326 m²",
         description: "Un proyecto desafiante ubicado en la cima de un cerro. Diseñamos un espacio recreativo que se integra con la topografía natural, priorizando la seguridad de los estudiantes y creando zonas de juego que fomentan el desarrollo cognitivo y físico.",
-        // TUS FOTOS SOLICITADAS:
         cover: "/assets/proyecto1.jpg",
         gallery: [
-          "/assets/proyecto1.jpg",
-          "/assets/proyecto2.jpg",
-          "/assets/proyecto3.jpg",
-          "/assets/proyecto4.jpg",
-          "/assets/proyecto5.jpg",
-          "/assets/proyecto6.jpg"
+          "/assets/lasalle/proyecto1.jpg",
+          "/assets/lasalle/proyecto2.jpg",
+          "/assets/lasalle/proyecto3.jpg",
+          "/assets/lasalle/proyecto4.jpg",
+          "/assets/lasalle/proyecto5.jpg",
+          "/assets/lasalle/proyecto6.jpg",
+          "/assets/lasalle/avancesalle1.jpg",
+          "/assets/lasalle/avancesalle2.jpg",
+          "/assets/lasalle/avancesalle3.jpg"
         ]
       },
     },
@@ -34,17 +35,40 @@ export async function getStaticPaths() {
         year: "2025",
         area: "350 m²",
         description: "Arquitectura moderna frente al mar. Este proyecto residencial combina el lujo con la resistencia a los elementos costeros. Espacios abiertos, ventilación cruzada y una piscina infinita que se funde con el horizonte.",
-        // TUS FOTOS SOLICITADAS:
-        cover: "/assets/casa-playa-render1.jpg", // Usamos el render principal de portada
+        cover: "/assets/CasaPlaya/renderentrada.jpg", 
         gallery: [
-          "/assets/casa-playa-obra1.jpg",
-          "/assets/casa-playa-obra2.jpg",
-          "/assets/casa-playa-render2.jpg",
-          // Repito alguna si quieres llenar la grilla o déjalo así
-          "/assets/casa-playa-render1.jpg" 
+          "/assets/CasaPlaya/renderentrada.jpg",
+          "/assets/CasaPlaya/renderpiscina.jpg",
+          "/assets/CasaPlaya/casa-playa-obra1.jpg",   
+          "/assets/CasaPlaya/casa-playa-obra2.jpg",    
+          "/assets/CasaPlaya/avance2.jpg",
+          "/assets/CasaPlaya/avance1.jpg",
+          "/assets/CasaPlaya/avance3.jpg",
+          "/assets/CasaPlaya/avance4.jpg",
+          "/assets/CasaPlaya/avance6.jpg",
+          "/assets/CasaPlaya/avance7.jpg",
+          "/assets/CasaPlaya/avance8.jpg"
         ]
       },
     },
+    {
+      params: { id: 'salle-centro' },
+      props: {
+        title: "Núcleos Sanitarios La Salle",
+        category: "Institucional / Renovación",
+        location: "La Salle (Campus Centro), Guayaquil",
+        year: "2025",
+        area: "54 m²",
+        description: "Una intervención que fusiona lo clásico con lo moderno. La fachada respeta la identidad histórica del colegio incorporando arcos metálicos contemporáneos. El diseño interior prioriza la accesibilidad universal, la higiene y el confort visual mediante iluminación LED indirecta y materiales de alto tráfico.",
+        cover: "/assets/lasallecen/salle-centro-1.jpg", 
+        gallery: [
+          "/assets/lasallecen/salle-centro-1.jpg",
+          "/assets/lasallecen/salle-centro-2.jpg",
+          "/assets/lasallecen/salle-centro-3.jpg",
+          "/assets/lasallecen/salle-centro-4.jpg"
+        ]
+      },
+    } 
   ];
 }
 

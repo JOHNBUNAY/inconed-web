@@ -35,6 +35,97 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+{/* SECCIÓN: METODOLOGÍA (Fondo Claro - Sin línea superior) */}
+  <section class="py-24 bg-gray-50 relative">
+    <div class="container mx-auto px-4 max-w-7xl">
+      
+      {/* Encabezado */}
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+           <span class="text-inconed-gold font-bold tracking-[0.2em] uppercase text-sm">Transparencia Total</span>
+           <h2 class="font-oswald text-4xl md:text-5xl font-bold mt-2 leading-tight text-inconed-dark">
+             NUESTRO PROCESO <br/><span class="text-inconed-gold">DE TRABAJO</span>
+           </h2>
+        </div>
+        {/* Línea decorativa lateral (solo estética interna) */}
+        <div class="h-1 w-24 bg-inconed-gold rounded-full md:mb-4 hidden md:block"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        {/* CARD 01 */}
+        <div class="group relative h-[500px] shadow-2xl border-b-4 border-inconed-gold hover:-translate-y-2 transition-transform duration-500">
+          <img 
+            src="/assets/metodologia-1.jpg" 
+            alt="Análisis Técnico" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+          
+          <div class="absolute inset-0 p-8 flex flex-col justify-end">
+            <span class="text-8xl font-oswald font-bold text-white/10 group-hover:text-inconed-gold/30 transition-colors duration-500 absolute top-4 right-4">01</span>
+            
+            <h3 class="font-oswald text-3xl text-white mb-3 relative z-10 group-hover:text-inconed-gold transition-colors">ANÁLISIS</h3>
+            <p class="text-gray-200 text-sm leading-relaxed border-l-2 border-inconed-gold pl-4 relative z-10">
+              Revisión técnica detallada de tus planos para garantizar precisión antes de construir.
+            </p>
+          </div>
+        </div>
+
+        {/* CARD 02 */}
+        <div class="group relative h-[500px] shadow-2xl border-b-4 border-inconed-gold hover:-translate-y-2 transition-transform duration-500">
+          <img 
+            src="/assets/metodologia-2.jpg" 
+            alt="Asesoría Experta" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+          
+          <div class="absolute inset-0 p-8 flex flex-col justify-end">
+            <span class="text-8xl font-oswald font-bold text-white/10 group-hover:text-inconed-gold/30 transition-colors duration-500 absolute top-4 right-4">02</span>
+            
+            <h3 class="font-oswald text-3xl text-white mb-3 relative z-10 group-hover:text-inconed-gold transition-colors">ASESORÍA</h3>
+            <p class="text-gray-200 text-sm leading-relaxed border-l-2 border-inconed-gold pl-4 relative z-10">
+               Guiamos tus decisiones para optimizar presupuesto sin sacrificar calidad.
+            </p>
+          </div>
+        </div>
+
+        {/* CARD 03 */}
+        <div class="group relative h-[500px] shadow-2xl border-b-4 border-inconed-gold hover:-translate-y-2 transition-transform duration-500">
+          <img 
+            src="/assets/metodologia-3.jpg" 
+            alt="Colaboración Total" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+          
+          <div class="absolute inset-0 p-8 flex flex-col justify-end">
+            <span class="text-8xl font-oswald font-bold text-white/10 group-hover:text-inconed-gold/30 transition-colors duration-500 absolute top-4 right-4">03</span>
+            
+            <h3 class="font-oswald text-3xl text-white mb-3 relative z-10 group-hover:text-inconed-gold transition-colors">COLABORACIÓN</h3>
+            <p class="text-gray-200 text-sm leading-relaxed border-l-2 border-inconed-gold pl-4 relative z-10">
+              Trabajo conjunto contigo. Tu visión respaldada por nuestra experiencia.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* TÍTULO PUENTE: Conecta con la siguiente sección */}
+  <section class="bg-white pt-20 pb-10">
+    <div class="container mx-auto px-4 text-center">
+        <span class="text-inconed-gold font-bold tracking-widest uppercase text-sm">Soluciones Integrales</span>
+        <h2 class="font-oswald text-4xl md:text-5xl font-bold text-inconed-dark mt-2 mb-6">
+          NUESTROS <span class="text-inconed-gold">SERVICIOS</span>
+        </h2>
+        <div class="w-24 h-1 bg-gray-200 mx-auto rounded-full"></div>
+    </div>
+  </section>
+
+
   <section class="pb-24 bg-white overflow-hidden">
     <div class="container mx-auto px-4 max-w-7xl space-y-24">
 
