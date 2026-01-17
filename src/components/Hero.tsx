@@ -34,7 +34,7 @@ export default function Hero() {
         {/* BOTONES */}
         <div className="animate-fade-up-delay flex flex-col md:flex-row gap-4 justify-center items-center opacity-0">
           <a 
-            href="https://wa.me/593982452634" 
+            href="https://wa.me/593994218531" 
             target="_blank"
             className="bg-inconed-gold text-black font-bold py-4 px-8 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/20"
           >
