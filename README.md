@@ -1,56 +1,34 @@
-# 🏗️ INCONED S.A.S. — Sitio Web Corporativo
+# INCONED S.A.S. — Corporate Website
 
-![Estado del Proyecto](https://img.shields.io/badge/Estado-Terminado-success)
-![Tecnología](https://img.shields.io/badge/Astro-v5.0-orange)
-![Estilos](https://img.shields.io/badge/Tailwind-CSS-blue)
+Sitio web corporativo de alto rendimiento desarrollado para una empresa de diseño, obras civiles y construcción en Ecuador. 
 
-Sitio web moderno, rápido y responsivo desarrollado para **INCONED S.A.S.**, empresa de diseño y construcción en Ecuador.
+El objetivo principal del proyecto fue crear una plataforma web que combine un SEO técnico sólido para captación de clientes locales, con una experiencia de navegación fluida y moderna.
 
-Este proyecto utiliza una arquitectura **SPA (Single Page Application)** simulada mediante Astro View Transitions, garantizando una navegación instantánea sin recargas de página y una experiencia de usuario Premium.
+## 🛠️ Stack Tecnológico
 
----
+* **Framework:** Astro (elegido por su arquitectura de "Islas" y generación de sitios estáticos, ideal para SEO y tiempos de carga rápidos).
+* **UI/Componentes:** React (utilizado exclusivamente para componentes interactivos complejos).
+* **Estilos:** Tailwind CSS.
+* **Lenguaje:** TypeScript.
 
-## 🚀 Tecnologías Utilizadas
+## ⚙️ Arquitectura y Decisiones Técnicas
 
-Este proyecto fue construido con las herramientas más modernas del desarrollo web (2025):
+A diferencia de una SPA tradicional de React, este proyecto utiliza la arquitectura de Astro para enviar la menor cantidad de JavaScript posible al cliente. 
 
-* **[Astro](https://astro.build/):** Framework principal (Rendimiento y SEO).
-* **[React](https://react.dev/):** Para componentes interactivos (Hero, Animaciones).
-* **[Tailwind CSS](https://tailwindcss.com/):** Sistema de diseño y estilos utilitarios.
-* **View Transitions API:** Para animaciones suaves entre páginas (efecto App nativa).
-* **TypeScript:** Para lógica robusta y tipado seguro.
-
----
-
-## ✨ Características Principales
-
-1.  **Navegación SPA:** Transiciones suaves (`slide`) entre secciones sin pantallazos blancos.
-2.  **Diseño Bento Grid:** Galería de proyectos moderna y asimétrica.
-3.  **Rutas Dinámicas:** Sistema de plantillas (`[id].astro`) para generar páginas de detalle de proyectos automáticamente.
-4.  **Dark/Light Mode Híbrido:** Combinación estratégica de secciones oscuras (elegancia) y claras (lectura).
-5.  **Integración WhatsApp:**
-    * Botón flotante persistente con efecto "ping".
-    * Formulario de contacto que redirige a la API de WhatsApp con mensaje prellenado.
-6.  **100% Responsive:** Adaptado perfectamente a Móviles, Tablets y Escritorio.
-7.  **SEO Optimizado:** Etiquetas Meta, Open Graph (para compartir en redes) y Favicon personalizado.
-
----
+* **Navegación SPA simulada:** Implementación de la API de *View Transitions* nativa del navegador para lograr cambios de ruta fluidos sin el peso de un router de cliente complejo (como React Router).
+* **Generación Dinámica de Rutas (SSG):** Uso de plantillas dinámicas (`[id].astro`) para compilar en tiempo de construcción las páginas del portafolio de proyectos, mejorando el TTFB (Time to First Byte).
+* **Optimización de Conversión (CRO):** Integración de un componente flotante persistente de WhatsApp que genera enlaces dinámicos prellenados con la API de WhatsApp, facilitando el contacto directo del cliente.
+* **Diseño Asimétrico:** Implementación de un layout basado en *Bento Grid* utilizando CSS Grid y Tailwind para la galería de proyectos, garantizando total adaptabilidad en dispositivos móviles.
 
 ## 📂 Estructura del Proyecto
 
 ```text
 /
-├── public/
-│   ├── assets/          # Imágenes de proyectos y logos
-│   └── favicon.png      # Ícono de la pestaña
+├── public/          # Archivos estáticos e imágenes (optimizados)
 ├── src/
-│   ├── components/      # Piezas reutilizables (Navbar, Footer, Cards)
-│   ├── layouts/         # Plantilla maestra (SEO, ViewTransitions)
-│   ├── pages/           # Rutas del sitio
-│   │   ├── detalle/     # Plantilla dinámica de proyectos ([id].astro)
-│   │   ├── contacto.astro
-│   │   ├── index.astro
-│   │   └── ...
-│   └── styles/          # Estilos globales y configuración de Tailwind
-├── astro.config.mjs     # Configuración del framework
-└── tailwind.config.mjs  # Configuración de diseño (Colores, Fuentes)
+│   ├── components/  # Componentes UI reutilizables (.astro y .tsx)
+│   ├── layouts/     # Wrappers de página (SEO meta tags, ViewTransitions)
+│   ├── pages/       # Sistema de enrutamiento basado en archivos
+│   └── styles/      # Configuración base de Tailwind y variables CSS
+├── astro.config.mjs
+└── tailwind.config.mjs
