@@ -64,12 +64,16 @@ export async function getStaticPaths() {
         year: "2025",
         area: "54 m²",
         description: "Una intervención que fusiona lo clásico con lo moderno. La fachada respeta la identidad histórica del colegio incorporando arcos metálicos contemporáneos. El diseño interior prioriza la accesibilidad universal, la higiene y el confort visual mediante iluminación LED indirecta y materiales de alto tráfico.",
-        cover: "/assets/lasallecen/salle-centro-1.jpg", 
+        cover: "/assets/lasallecen/sallece1.jpg", 
         gallery: [
-          "/assets/lasallecen/salle-centro-1.jpg",
-          "/assets/lasallecen/salle-centro-2.jpg",
-          "/assets/lasallecen/salle-centro-3.jpg",
-          "/assets/lasallecen/salle-centro-4.jpg"
+          "/assets/lasallecen/sallece1.jpg",
+          "/assets/lasallecen/sallece2.jpg",
+          "/assets/lasallecen/sallece3.jpg",
+          "/assets/lasallecen/sallece4.jpg",
+          "/assets/lasallecen/sallece5.jpg",
+          "/assets/lasallecen/sallece6.jpg",
+          "/assets/lasallecen/sallece7.jpg",
+          "/assets/lasallecen/sallece8.jpg"
         ]
       },
     } 
@@ -146,10 +150,11 @@ const { title, category, location, year, area, description, cover, gallery } = A
                             <img 
                                 src={img} 
                                 alt={`Vista ${index + 1} - ${title}`} 
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                class="gallery-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 loading="lazy"
                             />
                         </div>
+                        
                     ))}
                 </div>
             </div>
@@ -166,4 +171,61 @@ const { title, category, location, year, area, description, cover, gallery } = A
       </div>
   </section>
 
+<div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+      <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-inconed-gold transition-colors focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+      </button>
+      <img id="modal-image" src="" alt="Vista ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+  </div>
+
+  <script>
+      // Envolvemos todo en astro:page-load por si usas transiciones de vista en Astro
+      document.addEventListener('astro:page-load', () => {
+          const modal = document.getElementById('image-modal');
+          const modalImg = document.getElementById('modal-image');
+          const closeBtn = document.getElementById('close-modal');
+          const galleryImages = document.querySelectorAll('.gallery-img');
+
+          // Función para abrir el modal
+          galleryImages.forEach(img => {
+              img.addEventListener('click', (e) => {
+                  if (modal && modalImg) {
+                      modalImg.src = e.target.src; // Toma la ruta de la foto clickeada
+                      modal.classList.remove('hidden');
+                      // Timeout pequeño para que la transición de opacidad funcione
+                      setTimeout(() => {
+                          modal.classList.remove('opacity-0');
+                      }, 10);
+                  }
+              });
+          });
+
+          // Función para cerrar el modal
+          const closeModal = () => {
+              if (modal) {
+                  modal.classList.add('opacity-0');
+                  setTimeout(() => {
+                      modal.classList.add('hidden');
+                  }, 300); // Espera a que termine la animación
+              }
+          };
+
+          // Eventos para cerrar
+          if (closeBtn) closeBtn.addEventListener('click', closeModal);
+          
+          if (modal) {
+              modal.addEventListener('click', (e) => {
+                  if (e.target === modal) closeModal(); // Cierra si haces clic fuera de la foto
+              });
+          }
+
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') closeModal(); // Cierra con la tecla ESC
+          });
+      });
+  </script>
+
 </Layout>
+
