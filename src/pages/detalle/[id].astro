@@ -13,6 +13,7 @@ export async function getStaticPaths() {
         area: "326 m²",
         description: "Un proyecto desafiante ubicado en la cima de un cerro. Diseñamos un espacio recreativo que se integra con la topografía natural, priorizando la seguridad de los estudiantes y creando zonas de juego que fomentan el desarrollo cognitivo y físico.",
         cover: "/assets/avancesalle12.jpg",
+        video: "/assets/lasalle/Videofinal.mp4",
         gallery: [
           "/assets/lasalle/avancesalle1.jpg",
           "/assets/lasalle/avancesalle2.jpg",
@@ -90,7 +91,7 @@ export async function getStaticPaths() {
   ];
 }
 
-const { title, category, location, year, area, description, cover, gallery } = Astro.props;
+const { title, category, location, year, area, description, cover, video, gallery } = Astro.props;
 ---
 
 <Layout title={title}>
@@ -151,6 +152,22 @@ const { title, category, location, year, area, description, cover, gallery } = A
                 <p class="text-gray-600 text-lg leading-relaxed font-sans text-justify mb-12">
                     {description}
                 </p>
+              {video && (
+                    <div class="mb-16">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-3 h-3 bg-inconed-gold rounded-full animate-pulse"></span>
+                            <h4 class="font-oswald text-2xl text-inconed-dark uppercase tracking-wide">
+                                Resultado Final: <span class="text-inconed-gold">Inauguración</span>
+                            </h4>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-100/50 bg-black">
+                            <video controls class="w-full aspect-video object-contain">
+                                <source src={video} type="video/mp4" />
+                                Tu navegador no soporta el reproductor de video.
+                            </video>
+                        </div>
+                    </div>
+                )}
 
                 <h3 class="font-oswald text-3xl text-inconed-dark mb-8">GALERÍA VISUAL</h3>
                 
